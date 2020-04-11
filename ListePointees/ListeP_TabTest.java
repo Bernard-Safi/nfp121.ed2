@@ -107,6 +107,7 @@ public class ListeP_TabTest {
         }
         System.out.println(l);
         System.out.println(l.membre(h7));
+        System.out.println(l.equals(l));
         
     }
 }

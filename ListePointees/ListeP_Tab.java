@@ -1,4 +1,5 @@
 import java.util.Iterator ;
+import java.util.ArrayList;
 import java.lang.Class;
 /**
  * Décrivez votre classe ListeP_T ici.
@@ -6,7 +7,7 @@ import java.lang.Class;
  * @author (votre nom) 
  * @version (un numéro de version ou une date)
  */
-public  class ListeP_Tab implements ListePointInterface 
+public  class ListeP_Tab implements ListePointInterface
 {
      /**
       * ATTENTION, ATTENTION,
@@ -118,17 +119,25 @@ public  class ListeP_Tab implements ListePointInterface
     }    
 
     public boolean equals(Object liste){
+        boolean equals=false;
         if(!(liste instanceof ListePointInterface)){
             return false;
         }
         if(nbreElements!=((ListePointInterface)liste).longueur()){
             return false;
         }
-           /*
-            * à compléter...
-            * avec soin.
-            */
-        return false;
+        
+        ListeP_Tab l=(ListeP_Tab)liste;
+           for(int i=0;i<this.nbreElements;i++){
+             for(int j=0;j<l.nbreElements;j++){
+                 if(this.tabImplantation[0].equals(l.tabImplantation[0])){
+                     equals=true;
+                     break;
+                    }
+                }
+            }
+           
+        return equals;
     }    
 
 }
